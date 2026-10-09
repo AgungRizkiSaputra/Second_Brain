@@ -3,6 +3,10 @@ import { generateEmbedding } from '@/lib/embeddings';
 import { createGoogleProvider } from '@/lib/google';
 import { supabaseAdmin } from '@/lib/supabase';
 
+// Tambahkan 2 baris ini agar Netlify tidak menahan/mem-cache response streaming
+export const dynamic = 'force-dynamic';
+export const maxDuration = 30;
+
 type ChatMessage = {
   role?: unknown;
   content?: unknown;

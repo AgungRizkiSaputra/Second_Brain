@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import { generateEmbedding } from '@/lib/embeddings';
 import { supabaseAdmin } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
   try {
     const { content, title } = await req.json();
